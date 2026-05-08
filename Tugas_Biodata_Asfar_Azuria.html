@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata KTP</title>
+</head>
+<body>
+
+    <center>Tugas Buat Biodata</center>
+    <a name="biodata"></a>
+
+    <table border="1" width="600" cellpadding="5" align="center">
+        <tbody id="tabelBiodata">
+            <tr>
+                <td colspan="3" bgcolor="yellow" align="center"><b>BIODATA KTP</b></td>
+            </tr>
+
+            <tr>
+                <td rowspan="9" width="150" align="center" valign="middle">
+                    <img src="ASFAR_AZURIA.png" width="130" height="160" alt="Foto">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div align="center">
+        <a href="#biografi"><font color="green">Ke Biografi</font></a>
+    </div>
+
+    <hr width="80%">
+
+    <br><br>
+
+     <a name="biografi"></a>
+
+    <div align="left">
+        <h1><font color="darkblue">Awal Masuk Kuliah</font></h1>
+    </div>
+
+    <div align="left" style="margin-left: 3rem; margin-right: 3rem;">
+
+        <h2>Awal mula memilih PNJ</h2>
+        <p>
+            Sejak SMP, saya mulai memiliki ketertarikan yang besar terhadap dunia
+            teknologi dan komputer. Hingga suatu hari di SMA, ketika ada pelajaran Informatika, saya
+            merasa semangat dan ingin tahu lebih dalam. Dari sinilah
+            muncul keinginan untuk melanjutkan studi di bidang Teknik Informatika.
+        </p>
+
+        <h2>Proses Pendaftaran</h2>
+        <p>
+            Proses pendaftaran kuliah dimulai dengan mencari informasi sebanyak-banyaknya tentang
+            kampus dan jurusan yang diminati. Setelah berdiskusi panjang dengan orang tua dan
+            guru di sekolah, saya memutuskan untuk mendaftarkan diri saya ke PNJ, di jurusan Teknik Informatika.
+        </p>
+
+        <h2>Tes Masuk dan Seleksi</h2>
+        <p>
+            Tes SNBT menjadi momen yang paling menegangkan. Saya mempersiapkan diri dengan
+            belajar lebih giat mulai dari beberapa bulan sebelum hari tes tiba. Dengan penuh keyakinan,
+            saya mengerjakan setiap soal yang muncul sebaik mungkin.
+        </p>
+
+        <h2>Pengumuman Diterima</h2>
+        <p>
+            Hari pengumuman tiba dengan penuh harap dan cemas. Ketika nama saya muncul sebagai
+            mahasiswa yang diterima di PNJ, rasa syukur yang luar biasa langsung menyelimuti hati. Orang
+            tua pun ikut merasakan kebahagiaan yang sama. Ini adalah awal dari perjalanan saya yang
+            panjang, penuh dengan tantangan dan pembelajaran baru.
+        </p>
+
+        <h2>Hari Pertama Kuliah</h2>
+        <p>
+            Hari pertama kuliah terasa sangat berbeda dengan suasana sekolah. Lingkungan baru,
+            teman-teman baru, dan cara belajar yang baru membuat saya harus beradaptasi dengan
+            cepat. Namun semangat dan rasa ingin tahu yang tinggi membuat semuanya terasa
+            menyenangkan. Saya pun bertekad untuk memberikan yang terbaik selama masa perkuliahan.
+        </p>
+
+    </div>
+
+    <br>
+
+    <div align="center">
+        <a href="#biodata"><font color="green">Kembali ke Biodata</font></a>
+    </div>
+
+    <hr width="80%">
+
+<script>
+    const data = [
+  ["Nama", "Asfar Azuria"],
+  ["Tempat/Tgl Lahir", "Bekasi, 15 Juni 2007"],
+  ["Jenis Kelamin", "Laki-laki"],
+  ["Alamat", "Jl. Al-Amin 1, No. 19 Rt.005/015, Kel. Jatirahayu, Kec. Pondok Melati"],
+  ["Agama", "Islam"],
+  ["Pekerjaan", "Mahasiswa"],
+  ["Kewarganegaraan", "Indonesia"],
+  ["Hobi", ["Berenang", "Baca Buku", "Menggambar", "Nonton Film"]]
+];
+
+const table = document.getElementById("tabelBiodata");
+
+data.forEach(([label, value]) => {
+    const tr = document.createElement("tr");
+
+    const tdLabel = document.createElement("td");
+    tdLabel.textContent = label;
+
+    const tdValue = document.createElement("td");
+
+    if (Array.isArray(value)) {
+        const ul = document.createElement("ul");
+        value.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+        tdValue.appendChild(ul);
+    } else {
+        tdValue.textContent = value;
+    }
+
+  tr.appendChild(tdLabel);
+  tr.appendChild(tdValue);
+  table.appendChild(tr)
+});
+</script>
+</body>
+</html>
